@@ -42,33 +42,36 @@ $(document).ready(function() {
     console.log('Collapse toggle');
   });
 
-  // Vibrant.js
-  var thumbnails = $('.thumbnail img');
-  // Loop igennem hvert thumbnail
-  thumbnails.each(function(index, el) {
-    var vibrant = new Vibrant(this);
-    // Alle swatches
-    var swatches = vibrant.swatches();
-    // RGB værdi af Vibrant swatch
-    var vibrantSwatch = swatches.Vibrant.getRgb();
-    //Rgba() notering af Vibrant ( Men træk 45 fra så den altid er mørkere så rgb(255,255,255) bliver rgb(215,215,215))
-    var vibrantRgba = 'rgba(' + (vibrantSwatch[0] - 45) + ',' + (vibrantSwatch[1] - 45) + ',' + (vibrantSwatch[2] - 45) + ',0.85)';
-    // Den omvendte farve af Vibrant
-    var vibrantInverse = inverse(swatches.Vibrant.getHex());
+  // Kør først Vibrant.js igennem når MixItUp er færdig
+  $('#grid').on('mixLoad', function() {
+    // Vibrant.js
+    var thumbnails = $('.thumbnail img');
+    // Loop igennem hvert thumbnail
+    thumbnails.each(function(index, el) {
+      var vibrant = new Vibrant(this, 48, 10);
+      // Alle swatches
+      var swatches = vibrant.swatches();
+      // RGB værdi af Vibrant swatch
+      var vibrantSwatch = swatches.Vibrant.getRgb();
+      //Rgba() notering af Vibrant ( Men træk 45 fra så den altid er mørkere så rgb(255,255,255) bliver rgb(215,215,215))
+      var vibrantRgba = 'rgba(' + (vibrantSwatch[0] - 45) + ',' + (vibrantSwatch[1] - 45) + ',' + (vibrantSwatch[2] - 45) + ',0.85)';
+      // Den omvendte farve af Vibrant
+      var vibrantInverse = inverse(swatches.Vibrant.getHex());
 
-    // Indstil swatches til det tilhørende element - Overlay = Vibrant - "Se projektet" = Vibrant inverse
-    // $(this).siblings('a').children('.overlay').css({
-    $(this).siblings('.overlay').css({
-      'background-color': vibrantRgba
+      // Indstil swatches til det tilhørende element - Overlay = Vibrant - "Se projektet" = Vibrant inverse
+      // $(this).siblings('a').children('.overlay').css({
+      $(this).siblings('.overlay').css({
+        'background-color': vibrantRgba
+      });
+      $(this).siblings('.thumbnail-caption').children('a').css({
+        'border-color': vibrantInverse,
+        'color': vibrantInverse
+        // 'background-color': vibrantInverse
+      });
+      // $(this).siblings('.thumbnail-caption').children('a:before').css({
+      //   'background-color': vibrantInverse
+      // });
     });
-    $(this).siblings('.thumbnail-caption').children('a').css({
-      'border-color': vibrantInverse,
-      'color': vibrantInverse
-      // 'background-color': vibrantInverse
-    });
-    // $(this).siblings('.thumbnail-caption').children('a:before').css({
-    //   'background-color': vibrantInverse
-    // });
   });
 
 });
