@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <!-- DEFAULT LAYOUT -->
+  {% include head.html %}
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        {% include header.html %}
+        <div class="col-md-8 col-lg-9 col-md-offset-1">
+          <div class="row">
+            {{ content }}
+          </div>
+        </div>
+      </div>
+    </div>
+    {% include footer.html %}
+  </body>
+</html>

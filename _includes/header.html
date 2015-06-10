@@ -1,0 +1,86 @@
+<!-- <div class="row">
+ -->  <div class="col-xs-12">
+    <a href="/" class="logo">Jakob Lange</a>
+  </div>
+</div>
+<!-- /Logo -->
+
+<div class="row">
+  <nav class="col-md-3 col-lg-2 hidden-xs hidden-sm">
+    <h3>Cases</h3>
+    <div class="list-group">
+      {% for post in site.posts %}
+            {% if post.title %}
+            <a href="{{ post.url }}">{{ post.title }}</a>
+            {% endif %}
+      {% endfor %}
+    </div>
+    {% if page.categoryshow %}
+      <!-- /.list-group -->
+      <h3>Kategorier</h3>
+      <div class="list-group">
+        {% for category in site.categories %}
+          <a  href="#" class="category-link filter" data-filter=".{{category | first | slugify}}">{{ category | first }}</a>
+        {% endfor %}
+      </div>
+    {% endif %}
+    <!-- /.list-group -->
+    <h3>Info</h3>
+    <div class="list-group">
+      {% for page in site.pages %}
+        {% if page.title %}
+        <a href="{{ page.url | prepend: site.url }}">{{ page.title }}</a>
+        {% endif %}
+      {%endfor%}
+      <a href="mailto:{{ site.email }}?Subject=Hej%20{{ site.firstname }}%21">Kontakt</a>
+      <a href="{{site.url}}/assets/CV.pdf">Download CV</a>
+    </div>
+    <!-- /.list-group -->
+  </nav>
+
+  <!-- Mobile nav -->
+    <nav class="col-md-3 col-lg-2 hidden-md hidden-lg mobile-nav">
+    <div class="list-title">
+      <h3>Cases</h3>
+      <span class="glyphicon glyphicon-chevron-up"></span>
+    </div>
+    <div class="list-group collapse">
+      {% for post in site.posts %}
+            {% if post.title %}
+            <a href="{{ post.url }}">{{ post.title }}</a>
+            {% endif %}
+      {% endfor %}
+    </div>
+    {% if page.categoryshow %}
+      <!-- /.list-group -->
+      <div class="list-title">
+        <h3>Kategorier</h3>
+        <span class="glyphicon glyphicon-chevron-up"></span>
+      </div>
+      <div class="list-group collapse">
+        {% for category in site.categories %}
+          <a  href="#" class="category-link filter" data-filter=".{{category | first | slugify}}">{{ category | first }}</a>
+        {% endfor %}
+      </div>
+    {% endif %}
+    <!-- /.list-group -->
+    <div class="list-title">
+      <h3>Info</h3>
+      <span class="glyphicon glyphicon-chevron-up"></span>
+    </div>
+    <div class="list-group collapse">
+      {% for page in site.pages %}
+        {% if page.title %}
+        <a href="{{ page.url | prepend: site.url }}">{{ page.title }}</a>
+        {% endif %}
+      {%endfor%}
+      <a href="mailto:{{ site.email }}?Subject=Hej%20{{ site.firstname }}%21">Kontakt</a>
+      <a href="{{site.url}}/assets/CV.pdf">Download CV</a>
+    </div>
+    <!-- /.list-group -->
+  </nav>
+  <!-- /Mobile nav -->
+
+
+<!-- </div> -->
+<!-- /.row -->

@@ -1,0 +1,23 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+
+  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.url }}">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url | prepend: site.url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.url | prepend: site.url }}">
+
+<!-- Typekit init -->
+  <script src="//use.typekit.net/ufi5ajq.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+  <script src="{{ "/js/jquery.min.js" | prepend: site.url }}" ></script>
+  <script src="{{ "/js/Vibrant.min.js" | prepend: site.url }}" ></script>
+  <script src="{{ "/js/bootstrap.js" | prepend: site.url }}"></script>
+  <script src="{{ "/js/jquery.mixitup.min.js" | prepend: site.url }}"></script>
+</head>
+

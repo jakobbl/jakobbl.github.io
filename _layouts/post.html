@@ -1,0 +1,28 @@
+---
+layout: default
+---
+<!-- POST LAYOUT -->
+<div class="col-xs-12">
+  {% if page.hero %}
+    <div class="jumbotron" style="background-image: linear-gradient(to bottom, rgba(25,25,25,0) 35%,rgba(25,25,25,0.4) 100%), url({{ page.hero | prepend: site.heropath | prepend: site.url }}); background-position: {{ page.heropos }}">
+      <div class="caption">
+        <h2>{{ page.title }} </h2>
+        <p>{{ page.categories }}</p>
+      </div>
+    </div>
+    {% else %}
+  <div class="jumbotron nohero">
+    <div class="caption">
+      <h2>{{ page.title }} </h2>
+      <p>{{ page.categories }}</p>
+    </div>
+  </div>
+ {% endif %}
+
+  <div class="description">
+  {% if page.description %}
+    <h3 class="byline">{{ page.description }}</h3>
+  {% endif %}
+  {{ content }}
+  </div>
+</div>

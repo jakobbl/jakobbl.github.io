@@ -1,0 +1,128 @@
+.jumbotron {
+  color: white;
+  padding-bottom: 35%;
+  background-size: cover;
+  background-position: 0, center center;
+  position: relative;
+  @media (max-width: 997px) {
+    background: none !important;
+    padding: 0;
+    margin: 0;
+    position: static;
+  }
+  &.nohero{
+    background: none;
+    position: static;
+    color: $active;
+    padding: 0;
+    .caption {
+      position: relative;
+    p {
+      color: $secondary;
+      padding-bottom: 1em;
+      border-bottom: 1px solid $divider;
+    }
+  }
+  }
+ & .caption {
+  position: absolute;
+  bottom: 4%;
+  @media (max-width: 997px) {
+    position: relative;
+  }
+    p {
+      color: rgba(white, 0.8);
+      @media (max-width: 997px) {
+        color: $secondary;
+        padding-bottom: 1em;
+        border-bottom: 1px solid $divider;
+      }
+    }
+    h2 {
+      font-size: 4em;
+      letter-spacing: 2pt;
+      @media (max-width: 997px) {
+        font-size: 2.5em;
+        color: $active;
+      }
+    }
+  
+  }
+}
+
+.description {
+  font-size: 1.25em;
+  line-height: 1.65;
+  .byline {
+    margin-bottom: 1em;
+    @media (max-width: 997px) {
+      font-size: 1.1em;
+      line-height: 1.5;
+    }
+  }
+  img {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+}
+
+hr {
+  margin: 2em 0;
+}
+
+iframe {
+  margin: 1em 0;
+}
+video {
+  display: block;
+  margin: 0 auto;
+}
+.video-row h3 {
+  text-align: center;
+}
+.btn {
+  background-color: $active;
+  color: white;
+  font-size: 1.5em;
+  font-family: $sans-serif-stack;
+  margin: 0 0.5em;
+  span {
+    color: white;
+  }
+}
+
+.name {
+  text-align: center;
+  font-size: 4em;
+  color: $active;
+}
+.headshot {
+  margin: 0 auto 2em auto;
+}
+.name-byline {
+  color: $active;
+  text-align: center;
+  font-size: 1.5em;
+  font-family: $serif-stack;
+}
+
+.cv {
+  th {
+    @extend h3;
+    font-size: 1.5em;
+    text-align: center !important;
+    color: $active;
+    padding-bottom: 1em;
+  }
+  em {
+    text-align:  right !important;
+  }
+  td {
+    @extend .description;
+    font-size: 1.25em;
+    &:not(:last-child) {
+      margin-right: 1em;
+    }
+  }
+}
+

@@ -1,0 +1,42 @@
+$sans-serif-stack:"proxima-nova", "Open Sans", Helvetica, Arial, sans-serif;
+$serif-stack: "kepler-std-display", "Bodoni 72", Georgia, serif;
+
+body {
+  font-family: $sans-serif-stack;
+  color: $black;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-family: $serif-stack;
+  letter-spacing: 0.75pt;
+  overflow-wrap: break-word;
+}
+h1,h2,h3 {
+  font-weight: bold;
+}
+h1,h2 {
+  letter-spacing: 0.9pt;
+}
+h4 {
+  margin-bottom: 0.75em;
+}
+a {
+  text-decoration: none;
+  &:hover, &:focus, &:active {
+    color: $active;
+    text-decoration:  none;
+  }
+}
+.active {
+  color: $active;
+  transition: color 0.5s;
+}
+  li {
+    list-style-type: circle;
+    line-height: 2;
+  }
+  p {
+    overflow-wrap: break-word;
+  }
+  em {
+    color: $secondary;
+  }

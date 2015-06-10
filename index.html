@@ -1,0 +1,22 @@
+---
+layout: default
+regenerate: true
+categoryshow: true
+---
+
+<div class="row" id="grid">
+  {% for post in site.posts %}
+    <div class="col-xs-12 col-sm-6 col-md-4 mix {{ post.categories | first | slugify }}" data-order="">
+      <div class="grid-item thumbnail">
+        <img src="{{ post.thumbnail | prepend: site.thumbnailpath | prepend: site.url }}" alt="{{ post.title }}">
+       <!--  <a href="{{ post.url | prepend: site.url}}"> --> <div class="overlay"></div><!-- </a> -->
+          <div class="thumbnail-caption">
+            <h2>{{post.title}}</h2>
+            <p> {{ post.categories }}</p>
+            <a href="{{ post.url  | prepend: site.url }}">Se projektet</a>
+          </div>
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+<!-- /.row -->
