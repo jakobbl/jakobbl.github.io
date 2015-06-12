@@ -16,7 +16,7 @@ Filmene er en serie af små reklamefilm i længden af ca. 30sek. så det passer 
 </div>
 <br>&nbsp;<br>
 *Denne video er produceret som en caseopgave på Multimediedesigner-uddannelsen  
-på Københavns Erhversakademi, KEA*
+på Københavns Erhvervsakademi, KEA - April 2015*
 
 <!-- <hr>
 <div class="row video-row">
